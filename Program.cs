@@ -9,11 +9,12 @@
 
         //create objects
         product1 = new Product();
-        Product.TotalNoProducts++;
+        Product.SetTotalNoOfProducts(Product.GetTotalNoOfProducts() + 1);//1
         product2 = new Product();
-        Product.TotalNoProducts++;
+        Product.SetTotalNoOfProducts(Product.GetTotalNoOfProducts() + 1);//2
         product3 = new Product();
-        Product.TotalNoProducts++;
+        Product.SetTotalNoOfProducts(Product.GetTotalNoOfProducts() + 1);//3
+        //this is a way to increment a static value
 
         //initialize fields
         product1.SetProductId(1001);
@@ -31,9 +32,9 @@
 
         //Call method
 
-        product1.CalculateTax();
-        product2.CalculateTax();
-        product3.CalculateTax();
+        product1.CalculateTax(9.2);
+        product2.CalculateTax(7.4);
+        product3.CalculateTax(15.2);
 
 
         //Get values from field
@@ -63,11 +64,11 @@
         Console.WriteLine("Product Quantity: " + product3.GetQuantityInStock());
         Console.WriteLine("Date of Purchase: " + product3.GetDateOfPurchase());
 
-        int totalQuantity = product1.GetQuantityInStock() + product2.GetQuantityInStock() + product3.GetQuantityInStock();
+        int totalQuantity = Product.GetTotalQuantity(product1, product2, product3);
 
         Console.WriteLine("\nTotal Quantity: " + totalQuantity);
 
-        Console.WriteLine("\nTotal Number of Products: " + Product.TotalNoProducts);
+        Console.WriteLine("\nTotal Number of Products: " + Product.GetTotalNoOfProducts());
         Console.WriteLine("\nCategory of Products: " + Product.CategoryName);
 
         System.Console.ReadKey();
