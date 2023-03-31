@@ -32,9 +32,14 @@
 
         //Call method
 
-        product1.CalculateTax(9.2);
-        product2.CalculateTax(7.4);
-        product3.CalculateTax(15.2);
+        double q = 9.2;
+        product1.CalculateTax(percentage:out q);
+
+        //creating the variable within the argument using the out declaration
+        product2.CalculateTax(out double p);
+        Console.WriteLine("p is " + p);
+
+        product3.CalculateTax(cost: 10000, percentage: 3.4);
 
 
         //Get values from field
