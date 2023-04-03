@@ -32,11 +32,13 @@
 
         //Call method
 
+
         double q = 9.2;
-        product1.CalculateTax(percentage:out q);
+        product1.CalculateTax(percentage:in q);
 
         //creating the variable within the argument using the out declaration
-        product2.CalculateTax(out double p);
+        double p = 5.6;
+        product2.CalculateTax(in p);
         Console.WriteLine("p is " + p);
 
         product3.CalculateTax(cost: 10000, percentage: 3.4);
